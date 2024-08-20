@@ -1,19 +1,22 @@
 from bs4 import BeautifulSoup
 import requests
-
+print("test")
 #load page
-URL = "https://www.tampahybrids.com/listings"
-page = requests.get(URL)
+baseURL = "https://www.tampahybrids.com/listings"
+page = requests.get(baseURL)
 
 soup = BeautifulSoup(page.content, "html.parser")
 
+URLs = []
+print("here")
 links = soup.find_all('a')
-for link in links:
-
-    #links doubled
-    #get rid of vflyer
+""""for link in links:
     url = link.get('href')
     print(url)
+    if url not in "vflyer" and url not in URLs:
+        URLs.append(baseURL + url"""
+
+print(links)
 
 """
 from selenium import webdriver
