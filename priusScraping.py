@@ -4,18 +4,17 @@ print("test")
 #load page
 baseURL = "https://www.tampahybrids.com/listings"
 page = requests.get(baseURL)
-
 soup = BeautifulSoup(page.content, "html.parser")
 
 URLs = []
-print("here")
+print(soup)
 links = soup.find_all('a')
-""""for link in links:
+"""for link in links:
     url = link.get('href')
     print(url)
     if url not in "vflyer" and url not in URLs:
-        URLs.append(baseURL + url"""
-
+        URLs.append(baseURL + url)
+"""
 print(links)
 
 """
